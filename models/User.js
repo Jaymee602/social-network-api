@@ -39,7 +39,7 @@ const UserSchema = new Schema(
     }
 )
 
-PizzaSchema.virtual('friendCount').get(function() {
+UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 

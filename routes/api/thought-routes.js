@@ -22,9 +22,9 @@ router
   .get(getThoughtById)
   .put(updateThought)
   .delete(deleteThought)
-  .put(addReaction);
+  .post(addReaction);
 
   // Set up DELETE at api/thoughts/:id/:reactionId
-router.route('/:id/:reactionId').delete(removeReaction);
+router.route('/:id/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router;
