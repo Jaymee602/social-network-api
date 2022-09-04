@@ -1,7 +1,7 @@
 const { User } = require('../models');
 
 const userController = {
-    // get all pizzas
+    // get all users
     getAllUsers(req, res) {
         User.find({})
             .populate({
@@ -20,7 +20,7 @@ const userController = {
             });
     },
   
-    // get one pizza by id
+    // get one user by id
     getUserById({ params }, res) {
         User.findOne({ _id: params.id })
             .populate({
@@ -62,9 +62,9 @@ const userController = {
           })
           .catch(err => res.status(400).json(err));
     },
-    // delete pizza
+    // delete user
     deleteUser({ params }, res) {
-        Pizza.findOneAndDelete({ _id: params.id })
+        User.findOneAndDelete({ _id: params.id })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No user found with this id!' });
