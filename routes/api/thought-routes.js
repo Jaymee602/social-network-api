@@ -23,10 +23,10 @@ router
   .get(getThoughtById)
   .put(updateThought)
   .delete(deleteThought)
-;
+  .post(addReaction);
 
 // Set up POST at api/thoughts/:id/reactions
-router.route('/:id/reactions').post(addReaction);
+//router.route('/:id/reactions').post(addReaction);
 
   // Set up DELETE at api/thoughts/:id/reactions/:reactionId
 router.route('/:id/reactions/:reactionId').delete(removeReaction);
